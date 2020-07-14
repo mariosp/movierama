@@ -1,0 +1,8 @@
+.top-bar-wrapper {
+    height: 8%;
+    width: 100%;
+    background-color: var(--color-bg);
+    position: fixed;
+    top: 0;
+    display: flex;
+}

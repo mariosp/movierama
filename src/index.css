@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --color-bg: rgb(20,20,20);
+  --color-text-secondary: #c52525;
+}
+
+html {
+  background-color: var(--color-bg);
+}
+
+html, body, #root{
+  height: 100%;
+}

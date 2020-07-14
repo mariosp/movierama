@@ -1,0 +1,24 @@
+.search-bar-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.search-box {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    width: 40vw;
+    border-radius: 10vw;
+}
+
+.input-search {
+    border: none;
+    width: 100%;
+}
+
+.input-search:focus {
+    outline:none;
+}
