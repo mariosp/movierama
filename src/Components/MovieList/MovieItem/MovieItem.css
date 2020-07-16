@@ -21,15 +21,30 @@
     left: 0;
     width: 100%;
     text-align: center;
+    overflow: auto;
+    height: 100%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.movie-item-details::-webkit-scrollbar {
+    display: none;
 }
 
 .movie-item-title {
     color: var(--color-text-primary);
     word-break: break-word;
     font-size: 25px;
+    margin-top: 50%;
 }
 
-.movie-item-release-date, .movie-item-vote-average {
+.movie-item-release-date, .movie-item-vote-average, .movie-item-genre {
+    color: var(--color-text-primary);
+    font-size: 16px;
+}
+
+.movie-item-overview {
+    margin-top: 5px;
     color: var(--color-text-primary);
     font-size: 16px;
 }

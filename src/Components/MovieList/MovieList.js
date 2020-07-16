@@ -29,15 +29,14 @@ const MovieList = ({fetchedMovies, genres}) => {
     const [isFetching, setIsFetching] = useScroll(fetchMovies);
 
     const renderedMovieList = movies.length && genres.length && movies.map(movie => {
-        console.log(movie.genre_ids)
-        movie.genre_ids = movie.genre_ids.map(id=> genres.forEach(genre=>{
-            if(genre.id === id) {
-                console.log("found")
-                return genre.name;
+        movie.genre_string = movie.genre_ids.map(id => {
+            for(const genre of genres ) {
+                if(genre.id === id) {
+                    return genre.name;
+                }
             }
-        }))
-
-        console.log( movie.genre_ids)
+        });
+        movie.genre_Tostring = movie.genre_string.join('-');
 
         return  <div id={movie.id}>
                     <MovieItem movie={movie}/>

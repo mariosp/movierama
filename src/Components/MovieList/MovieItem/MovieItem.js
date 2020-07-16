@@ -12,8 +12,14 @@ const MovieItem = ({movie}) => {
                 <div className="movie-item-release-date">
                     {movie.release_date.substr(0, movie.release_date.indexOf('-'))}
                 </div>
+                <div className="movie-item-genre">
+                    {movie.genre_Tostring}
+                </div>
                 <div className="movie-item-vote-average">
                     Vote Avg: {movie.vote_average}
+                </div>
+                <div className="movie-item-overview">
+                    {movie.overview}
                 </div>
             </div>
         </div>
