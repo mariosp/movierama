@@ -3,11 +3,11 @@ import "./TopBar.css";
 import Logo from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
 
-const TopBar = () => {
+const TopBar = ({handleInputChange}) => {
     return (
         <div className="top-bar-wrapper">
             <Logo />
-            <SearchBar />
+            <SearchBar handleInputChange={handleInputChange}/>
         </div>
     );
 }

@@ -5,11 +5,10 @@ const useScroll = (callback) => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {window.removeEventListener('scroll', handleScroll)}
     }, []);
 
     useEffect(() => {
-        console.log(isFetching)
         if (!isFetching) return;
         callback();
     }, [isFetching]);

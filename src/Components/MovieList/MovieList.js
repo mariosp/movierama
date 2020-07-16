@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from "react";
 import "./MovieList.css";
-import {getNowPlaying} from "../../Shared/api/api";
+import {getNowPlaying, searchMovie} from "../../Shared/api/api";
 import MovieItem from "./MovieItem/MovieItem";
 import useScroll from "../../Shared/hooks/useScroll";
-import {AiOutlineLoading3Quarters} from "react-icons/all";
 
-const MovieList = ({fetchedMovies, genres}) => {
+const MovieList = ({searchKey, genres, scrollListener}) => {
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPage, setTotalPage] = useState(1)
@@ -13,6 +12,13 @@ const MovieList = ({fetchedMovies, genres}) => {
     useEffect(()=>{
         setIsFetching(true)
     },[])
+
+    useEffect(()=>{
+        if(searchKey !== undefined && searchKey.length !== 0) { //searchMovie
+            setPage(1);
+            setIsFetching(true);
+        }
+    },[searchKey])
 
     const fetchMovies = async () => {
         if(page <= totalPage) {
@@ -26,9 +32,37 @@ const MovieList = ({fetchedMovies, genres}) => {
         }
     }
 
-    const [isFetching, setIsFetching] = useScroll(fetchMovies);
+    const searchMovies = async () => {
+        const response = await searchMovie(searchKey, page);
+        if(response.page === 1) {
+            setTotalPage(response.total_pages);
+            setMovies([...response.results]);
+            setPage(response.page + 1);
+            setIsFetching(false);
+            return;
+        }
 
-    const renderedMovieList = movies.length && genres.length && movies.map(movie => {
+        if(response.page <= response.total_pages) {
+            setMovies(prevState => [...prevState, ...response.results]);
+            setPage(response.page + 1);
+            setIsFetching(false);
+        } else {
+            setIsFetching(false);
+        }
+    }
+
+    const fetchMode = () => {
+        if(searchKey !== undefined && searchKey.length !== 0){
+            return searchMovies;
+        }
+        if (searchKey === undefined) {
+            return fetchMovies;
+        }
+    }
+
+    const [isFetching, setIsFetching] = useScroll(fetchMode());
+
+    const renderedMovieList = !!movies.length && genres.length && movies.map(movie => {
         movie.genre_string = movie.genre_ids.map(id => {
             for(const genre of genres ) {
                 if(genre.id === id) {
@@ -49,7 +83,7 @@ const MovieList = ({fetchedMovies, genres}) => {
                 {renderedMovieList}
             </div>
             {
-            isFetching &&
+            isFetching ?
             <div className="movie-list-loading-div">
                 <img
                     className="movie-list-loading"
@@ -57,6 +91,8 @@ const MovieList = ({fetchedMovies, genres}) => {
                     alt="loading bar"
                 />
             </div>
+            :
+            null
             }
         </>
     );

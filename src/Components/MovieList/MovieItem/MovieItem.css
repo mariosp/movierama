@@ -1,6 +1,7 @@
 .movie-item-wrapper {
     margin: 10px;
     position: relative;
+    cursor: pointer;
 }
 
 .movie-item-wrapper:hover > img {

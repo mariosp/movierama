@@ -10,7 +10,7 @@ const MovieItem = ({movie}) => {
             <div className="movie-item-details">
                 <div className="movie-item-title">{movie.title}</div>
                 <div className="movie-item-release-date">
-                    {movie.release_date.substr(0, movie.release_date.indexOf('-'))}
+                    {movie.release_date && movie.release_date.substr(0, movie.release_date.indexOf('-'))}
                 </div>
                 <div className="movie-item-genre">
                     {movie.genre_Tostring}

@@ -1,3 +1,11 @@
 .main-wrapper{
     padding-top: 8%;
 }
+
+.no-visible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
