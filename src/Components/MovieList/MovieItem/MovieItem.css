@@ -1,0 +1,35 @@
+.movie-item-wrapper {
+    margin: 10px;
+    position: relative;
+}
+
+.movie-item-wrapper:hover > img {
+    filter: brightness(50%);
+}
+
+.movie-item-wrapper:hover > .movie-item-details {
+   visibility: visible;
+}
+
+.movie-item-details {
+    visibility: hidden;
+}
+
+.movie-item-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.movie-item-title {
+    color: var(--color-text-primary);
+    word-break: break-word;
+    font-size: 25px;
+}
+
+.movie-item-release-date, .movie-item-vote-average {
+    color: var(--color-text-primary);
+    font-size: 16px;
+}
