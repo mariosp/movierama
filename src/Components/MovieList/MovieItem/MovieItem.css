@@ -49,3 +49,9 @@
     color: var(--color-text-primary);
     font-size: 16px;
 }
+
+.movie-item-image-fallback{
+    width: 220px;
+    height: 330px;
+    background: burlywood;
+}

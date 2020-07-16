@@ -26,7 +26,7 @@ const SearchBar = ({handleInputChange}) => {
                        placeholder="Search..."
                        className="input-search"
                        value={search}
-                       onInput={(event)=> handleChange(event)}
+                       onChange={(event)=> handleChange(event)}
                 />
                 <div className="input-clear" onClick={()=> reset()}>
                     <FaTimes />

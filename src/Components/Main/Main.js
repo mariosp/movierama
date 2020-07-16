@@ -17,9 +17,13 @@ const Main = ({searchKey}) => {
 
     return (
         <>
-            <div className={(searchKey && searchKey.length ? 'no-visible':'visible') + ' main-wrapper'}>
-                <MovieList genres={genres} scrollListener={!(searchKey && searchKey.length)} />
-            </div>
+            {
+                !(searchKey && searchKey.length) ?
+                    <div className={(searchKey && searchKey.length ? 'no-visible' : 'visible') + ' main-wrapper'}>
+                        <MovieList genres={genres} scrollListener={!(searchKey && searchKey.length)}/>
+                    </div>
+                    : null
+            }
 
             {
                 (searchKey && searchKey.length) ?

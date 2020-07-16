@@ -1,12 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import "./MovieItem.css";
 import {imageUrl} from "../../../Shared/api/api";
 
 
 const MovieItem = ({movie}) => {
+    const [onError,setOnError] = useState(false);
     return (
         <div className="movie-item-wrapper">
-            <img src={imageUrl + movie.poster_path} alt={movie.title} />
+            {   !onError?
+                <img src={imageUrl + movie.poster_path} alt={movie.title} onError={()=>setOnError(true)}/>
+                :
+                <div className="movie-item-image-fallback"></div>
+            }
             <div className="movie-item-details">
                 <div className="movie-item-title">{movie.title}</div>
                 <div className="movie-item-release-date">

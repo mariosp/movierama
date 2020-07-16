@@ -7,7 +7,8 @@ import useScroll from "../../Shared/hooks/useScroll";
 const MovieList = ({searchKey, genres, scrollListener}) => {
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(1);
-    const [totalPage, setTotalPage] = useState(1)
+    const [totalPage, setTotalPage] = useState(1);
+    const [loading, setLoading] = useState(false);
 
     useEffect(()=>{
         setIsFetching(true)
@@ -17,6 +18,7 @@ const MovieList = ({searchKey, genres, scrollListener}) => {
         if(searchKey !== undefined && searchKey.length !== 0) { //searchMovie
             setPage(1);
             setIsFetching(true);
+            setLoading(true);
         }
     },[searchKey])
 
@@ -34,6 +36,7 @@ const MovieList = ({searchKey, genres, scrollListener}) => {
 
     const searchMovies = async () => {
         const response = await searchMovie(searchKey, page);
+        setLoading(false);
         if(response.page === 1) {
             setTotalPage(response.total_pages);
             setMovies([...response.results]);
@@ -79,11 +82,21 @@ const MovieList = ({searchKey, genres, scrollListener}) => {
 
     return (
         <>
+            { loading ?
+                <div className="movie-list-loading-div">
+                    <img
+                        className="movie-list-loading"
+                        src={process.env.PUBLIC_URL + '/images/loading.svg'}
+                        alt="loading bar"
+                    />
+                </div> :
+                null
+            }
             <div className="movie-list-wrapper">
                 {renderedMovieList}
             </div>
             {
-            isFetching ?
+            isFetching && !loading ?
             <div className="movie-list-loading-div">
                 <img
                     className="movie-list-loading"

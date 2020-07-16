@@ -13,7 +13,7 @@ const useScroll = (callback) => {
         callback();
     }, [isFetching]);
 
-    function handleScroll() { //stop api call when is fetching is true
+    function handleScroll() { //stop api call when fetching is true
         if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isFetching) return;
         setIsFetching(true);
     }
