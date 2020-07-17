@@ -6,7 +6,6 @@ import Main from "./Components/Main/Main";
 const App = () => {
     const [searchKey, setSearchKey] = useState("")
     const handleInputChange = (searchInput) => {
-        console.log(searchInput)
         setSearchKey(searchInput);
     }
 

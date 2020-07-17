@@ -10,9 +10,6 @@ const MovieItem = ({movie}) => {
     const [video, setVideo] = useState(null);
     const [reviews, setReviews] = useState([]);
     const [similar, setSimilar] = useState([]);
-    // let videovar = null;
-    // let reviewsvar = null;
-    // let similarvar = null;
 
     useEffect(()=> {
         if (expand) {
@@ -27,7 +24,6 @@ const MovieItem = ({movie}) => {
     const getInfo = () => {
         if (expand) {
             getVideo(movie.id).then(res=> {
-                console.log(res);
                 if(res.results.length) {
                     for(const video of res.results) {
                         if(video.type === "Trailer" && video.site === "YouTube") {
@@ -40,22 +36,13 @@ const MovieItem = ({movie}) => {
             });
 
             getReviewss(movie.id).then(res=> {
-                console.log(res);
                 setReviews(res.results);
             })
 
             getSimilar(movie.id).then(res => {
-                console.log(res);
             })
-            // setVideo(getVideo(movie.id));
-            // setReviews(getReviewss(movie.id));
-            // setSimilar(getSimilar(movie.id));
         }
     }
-
-    console.log(video)
-    console.log(reviews)
-    console.log(similar)
 
     return (
         <div className={'movie-item-wrapper ' + (expand? 'expand':'no-expand')} onClick={handleExpand}>
