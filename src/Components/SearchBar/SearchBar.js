@@ -7,7 +7,7 @@ const SearchBar = ({handleInputChange}) => {
 
     useEffect(() => {
         handleInputChange(search);
-    },[search])
+    },[search,handleInputChange])
 
     const handleChange = (event) => {
         const searchKey = event.target.value.trimStart();

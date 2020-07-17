@@ -75,9 +75,7 @@ const MovieList = ({searchKey, genres, scrollListener}) => {
         });
         movie.genre_Tostring = movie.genre_string.join('-');
 
-        return  <div id={movie.id}>
-                    <MovieItem movie={movie}/>
-                </div>
+        return <MovieItem movie={movie} id={movie.id} />
     });
 
     return (
