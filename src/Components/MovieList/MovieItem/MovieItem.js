@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./MovieItem.css";
 import {getRevies, getReviewss, getSimilar, getVideo, imageUrl} from "../../../Shared/api/api";
+import ReviewList from "../../ReviewsList/ReviewsList";
 
 
 const MovieItem = ({movie}) => {
@@ -40,6 +41,7 @@ const MovieItem = ({movie}) => {
 
             getReviewss(movie.id).then(res=> {
                 console.log(res);
+                setReviews(res.results);
             })
 
             getSimilar(movie.id).then(res => {

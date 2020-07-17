@@ -2,6 +2,7 @@
     margin: 10px;
     position: relative;
     cursor: pointer;
+    max-height: 330px;
 }
 
 .movie-item-wrapper:hover > img {
@@ -73,12 +74,6 @@
     }
 }
 
-
-
-/*.no-expanded {*/
-/*    display: none;*/
-/*}*/
-
 .expanded {
     width: 100%;
 }
@@ -86,4 +81,9 @@
 .video-iframe{
     width: 100%;
     height: 100%;
+}
+
+.expanded-bottom {
+    display: block;
+    width: 100%;
 }
