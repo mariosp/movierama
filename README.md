@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+MovieRama
+</h1>
 
-## Available Scripts
+<p align="center">React<p>
 
-In the project directory, you can run:
+### A simple movie database
 
-### `npm start`
+![Heroku](https://heroku-badge.herokuapp.com/?app=todos-angular)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> You need to have Node installed to run the project locally
 
-### `npm run build`
+### Installation and running
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install dependencies
+```sh
+$ npm install
+```
+To start the app run
+```sh
+$ npm start
+```
+React movierama-app : http://localhost:3000
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Test the app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can preview the app on heroku: 
 
-### `npm run eject`
+[movierama](https://movierama-mp.herokuapp.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Application Screenshots
+ 
+Desktop
+<img width="1067" alt="Screenshot 2020-10-11 at 2 51 06 PM" src="https://user-images.githubusercontent.com/3619970/95677963-f287f980-0bd1-11eb-9afb-e0f97f7a343c.png">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##
+![Screenshot 2020-10-11 at 2 51 58 PM](https://user-images.githubusercontent.com/3619970/95677983-14817c00-0bd2-11eb-9ec8-3e464a56e649.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Mobile
+![movierama-mp herokuapp com_(iPhone X)](https://user-images.githubusercontent.com/3619970/95677966-f61b8080-0bd1-11eb-80e4-a72608788452.png)
